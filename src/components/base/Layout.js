@@ -422,7 +422,7 @@ class Layout extends React.Component {
                                 noWrap
                                 className={classes.appBarTitle}
                                 onClick={() => { window.location = '/' }}>
-                                StickyBoard
+                                CoronaBoard
                             </Typography>
 
                             <Typography

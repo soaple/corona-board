@@ -56,18 +56,6 @@ const SidebarMenuDict = {
         url: '/components/table',
         value: 203,
         need_permission: false
-    }, {
-        title: 'Number',
-        icon: (<AvTimer />),
-        url: '/components/number',
-        value: 204,
-        need_permission: false
-    }, {
-        title: 'Weather',
-        icon: (<WbSunny />),
-        url: '/components/weather',
-        value: 205,
-        need_permission: false
     }],
 
     /******************

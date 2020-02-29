@@ -12,6 +12,9 @@ import { LineChart, BarChart, StackedBarChart, ComposedChart,
     ScatterChart, Treemap
 } from '@stickyboard/recharts';
 
+import ApiManager from 'network/ApiManager';
+import StatusCode from 'network/StatusCode';
+
 import PageBaseContainer from 'redux/containers/PageBaseContainer';
 
 const styles = theme => ({
@@ -266,10 +269,68 @@ class ComponentChartsPage extends React.Component {
         super(props);
 
         this.state = {
+            brief: null,
+            latest: null,
+            timeseries: null,
+        }
+    }
+
+    componentDidMount() {
+        ApiManager.Corona.readBrief(this.readBriefCallback);
+        ApiManager.Corona.readLatest(this.readLatestCallback);
+        ApiManager.Corona.readTimeseries(this.readTimeseriesCallback);
+    }
+
+    readBriefCallback = (statusCode, response) => {
+        switch (statusCode) {
+        case StatusCode.OK:
+            this.setState({
+                brief: response,
+            });
+            break;
+        default:
+            alert(response.msg);
+            break;
+        }
+    }
+
+    readLatestCallback = (statusCode, response) => {
+        switch (statusCode) {
+        case StatusCode.OK:
+            this.setState({
+                latest: response,
+            });
+            break;
+        default:
+            alert(response.msg);
+            break;
+        }
+    }
+
+    readTimeseriesCallback = (statusCode, response) => {
+        switch (statusCode) {
+        case StatusCode.OK:
+
+            const data = response[0].timeseries;
+            const chinaData = Object.keys(data).map((key) => {
+                return {
+                    ...data[key],
+                    date: key,
+                };
+            });
+            console.log(chinaData)
+            this.setState({
+                timeseries: chinaData,
+            });
+            break;
+        default:
+            alert(response.msg);
+            break;
         }
     }
 
     generateBlock = (block) => {
+        const { brief, latest, timeseries } = this.state;
         const { theme } = this.props;
         let colors = theme.colors.colorArray;
 
@@ -278,11 +339,11 @@ class ComponentChartsPage extends React.Component {
             return (
                 <Sticker key={block.i}>
                     <LineChart
-                        data={lineChartData}
-                        xAxisDataKey={'time'}
+                        data={timeseries}
+                        xAxisDataKey={'date'}
                         lineType={'linear'}
-                        lineDataKey={'visitors'}
-                        lineName={'Visitors'}
+                        lineDataKey={'confirmed'}
+                        lineName={'Confirmed'}
                         lineColor={colors[0]} />
                 </Sticker>
             )
