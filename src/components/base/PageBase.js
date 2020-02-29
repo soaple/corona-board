@@ -85,16 +85,16 @@ class PageBase extends React.Component {
     }
 
     initializeLayout = () => {
-        const userId = CookieManager.getCookie('userId');
-        if (userId) {
-            this.props.showMessageSnackbar('Loading...');
-            ApiManager.StickyBoard.readUserLayout(
-                userId,
-                window.location.pathname,
-                this.readUserLayoutCallback);
-        } else {
+        // const userId = CookieManager.getCookie('userId');
+        // if (userId) {
+        //     this.props.showMessageSnackbar('Loading...');
+        //     ApiManager.StickyBoard.readUserLayout(
+        //         userId,
+        //         window.location.pathname,
+        //         this.readUserLayoutCallback);
+        // } else {
             this.setInitialLayout();
-        }
+        // }
     }
 
     handleCloseMenu = () => {
@@ -106,44 +106,44 @@ class PageBase extends React.Component {
     };
 
     onSaveLayout = () => {
-        const userId = CookieManager.getCookie('userId');
-        if (userId) {
-            ApiManager.StickyBoard.updateUserLayout(
-                userId,
-                window.location.pathname,
-                JSON.stringify(this.state.layouts),
-                JSON.stringify(this.state.blocks),
-                this.updateUserLayoutCallback);
-        }
+        // const userId = CookieManager.getCookie('userId');
+        // if (userId) {
+        //     ApiManager.StickyBoard.updateUserLayout(
+        //         userId,
+        //         window.location.pathname,
+        //         JSON.stringify(this.state.layouts),
+        //         JSON.stringify(this.state.blocks),
+        //         this.updateUserLayoutCallback);
+        // }
     }
 
-    readUserLayoutCallback = (statusCode, response) => {
-        this.props.hideMessageSnackbar();
-        switch (statusCode) {
-        case StatusCode.OK:
-            this.setState({
-                layouts: JSON.parse(response.layout),
-                blocks: JSON.parse(response.blocks),
-            });
-            break;
-        case StatusCode.NOT_FOUND:
-            this.setInitialLayout();
-            break;
-        default:
-            alert(response.msg);
-            break;
-        }
-    }
-
-    updateUserLayoutCallback = (statusCode, response) => {
-        switch (statusCode) {
-        case StatusCode.OK:
-            break;
-        default:
-            alert(response.msg);
-            break;
-        }
-    }
+    // readUserLayoutCallback = (statusCode, response) => {
+    //     this.props.hideMessageSnackbar();
+    //     switch (statusCode) {
+    //     case StatusCode.OK:
+    //         this.setState({
+    //             layouts: JSON.parse(response.layout),
+    //             blocks: JSON.parse(response.blocks),
+    //         });
+    //         break;
+    //     case StatusCode.NOT_FOUND:
+    //         this.setInitialLayout();
+    //         break;
+    //     default:
+    //         alert(response.msg);
+    //         break;
+    //     }
+    // }
+    //
+    // updateUserLayoutCallback = (statusCode, response) => {
+    //     switch (statusCode) {
+    //     case StatusCode.OK:
+    //         break;
+    //     default:
+    //         alert(response.msg);
+    //         break;
+    //     }
+    // }
 
     render() {
         const { layouts, blocks, isEditingMode, isMenuOpen } = this.state;
@@ -158,7 +158,10 @@ class PageBase extends React.Component {
                 <Board
                     ref={this.board}
                     layouts={layouts}
-                    onLayoutChange={(newLayouts) => { this.setState({ layouts: newLayouts }); }}
+                    onLayoutChange={(newLayouts) => {
+                        console.log(JSON.stringify(newLayouts));
+                        this.setState({ layouts: newLayouts });
+                    }}
                     onSaveLayout={this.onSaveLayout}>
                     {blocks.map((block, index) => {
                         return generateBlock(block);

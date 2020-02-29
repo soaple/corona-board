@@ -44,18 +44,6 @@ const SidebarMenuDict = {
         url: '/components/chart',
         value: 201,
         need_permission: false
-    }, {
-        title: 'Highcharts',
-        icon: (<Timeline />),
-        url: '/components/highcharts',
-        value: 202,
-        need_permission: false
-    }, {
-        title: 'Table',
-        icon: (<ViewList />),
-        url: '/components/table',
-        value: 203,
-        need_permission: false
     }],
 
     /******************

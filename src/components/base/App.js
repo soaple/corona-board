@@ -14,8 +14,6 @@ import FullScreenLayout from './FullScreenLayout';
 const IntroPage = loadable(() => import('components/page/IntroPage'));
 // Component
 const ComponentChartsPage= loadable(() => import('components/page/ComponentChartsPage'));
-const ComponentHighchartsPage= loadable(() => import('components/page/ComponentHighchartsPage'));
-const ComponentTablePage= loadable(() => import('components/page/ComponentTablePage'));
 // Layering
 const LayeringMapPage= loadable(() => import('components/page/LayeringMapPage'));
 const LayeringHeatMapPage= loadable(() => import('components/page/LayeringHeatMapPage'));
@@ -87,8 +85,6 @@ class App extends React.Component {
                                     <Route exact path='/' component={IntroPage} />
                                     {/* Component */}
                                     <Route path='/components/chart' component={ComponentChartsPage} />
-                                    <Route path='/components/highcharts' component={ComponentHighchartsPage} />
-                                    <Route path='/components/table' component={ComponentTablePage} />
                                     {/* Layering */}
                                     <Route path="/layering/map" component={LayeringMapPage} />
                                     <Route path="/layering/heatmap" component={LayeringHeatMapPage} />

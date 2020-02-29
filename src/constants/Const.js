@@ -31,7 +31,7 @@ var Const = {
      */
     RGL_LAYOUT_PROPS: {
         className: 'layout',
-        rowHeight: 40,
+        rowHeight: 20,
         cols: {lg: 12, md: 12, sm: 8, xs: 6, xxs: 4},
         breakpoints: {lg: 1280, md: 996, sm: 768, xs: 480, xxs: 0},
         margin: [15, 20],
