@@ -24,42 +24,20 @@ function StickyBoardIcon(props) {
 
 const SidebarMenuDict = {
 
-    /******************
-     * Intro Menu
-     ******************/
-     INTRO: [{
-         title: 'Intro',
-         icon: (<StickyBoardIcon style={{ padding: 2 }} />),
-         url: '/',
-         value: 101,
-         need_permission: false
-     }],
-
      /******************
      * Component Menus
      ******************/
-    COMPONENTS: [{
+    STATISTICS: [{
         title: 'Chart',
         icon: (<Timeline />),
-        url: '/components/chart',
-        value: 201,
-        need_permission: false
-    }],
-
-    /******************
-     * Layering Menus
-     ******************/
-    LAYERING: [{
-        title: 'Map',
-        icon: (<Map />),
-        url: '/layering/map',
-        value: 301,
+        url: '/statistics/chart',
+        value: 101,
         need_permission: false
     }, {
         title: 'HeatMap',
         icon: (<Layers />),
-        url: '/layering/heatmap',
-        value: 302,
+        url: '/statistics/heatmap',
+        value: 102,
         need_permission: false
     }],
 

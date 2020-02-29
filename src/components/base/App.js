@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import loadable from '@loadable/component';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -82,12 +82,10 @@ class App extends React.Component {
                                 selectedThemeKey={selectedThemeKey}
                                 onThemeChange={this.onThemeChange}>
                                 <Switch>
-                                    <Route exact path='/' component={IntroPage} />
-                                    {/* Component */}
-                                    <Route path='/components/chart' component={ComponentChartsPage} />
-                                    {/* Layering */}
-                                    <Route path="/layering/map" component={LayeringMapPage} />
-                                    <Route path="/layering/heatmap" component={LayeringHeatMapPage} />
+                                    <Route exact path='/' component={() => { return <Redirect to='/statistics/chart' /> }} />
+                                    {/* Statistics */}
+                                    <Route path='/statistics/chart' component={ComponentChartsPage} />
+                                    <Route path="/statistics/heatmap" component={LayeringHeatMapPage} />
                                     {/* Not found */}
                                     <Route path='*' component={NotFoundPage} />
                                 </Switch>

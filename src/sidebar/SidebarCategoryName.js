@@ -1,9 +1,7 @@
 // src/sidebar/SidebarCategoryName.js
 
 const SidebarCategoryName = {
-    INTRO: 'INTRO',
-    COMPONENTS: 'COMPONENTS',
-    LAYERING: 'LAYERING',
+    STATISTICS: 'STATISTICS',
 }
 
 export default SidebarCategoryName;
