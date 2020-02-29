@@ -1,5 +1,6 @@
 // src/theme/StickyBoardThemes.js
 
+import ThemeCorona from 'theme/collections/ThemeCorona';
 import ThemeLight from 'theme/collections/ThemeLight';
 import ThemeDark from 'theme/collections/ThemeDark';
 import ThemeSunset from 'theme/collections/ThemeSunset';
@@ -9,6 +10,7 @@ import ThemeMoonlight from 'theme/collections/ThemeMoonlight';
 import ThemeSoaple from 'theme/collections/ThemeSoaple';
 
 const StickyBoardThemes = {
+    Corona: ThemeCorona,
     Light: ThemeLight,
     Dark: ThemeDark,
     Sunset: ThemeSunset,

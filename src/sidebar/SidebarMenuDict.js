@@ -28,16 +28,10 @@ const SidebarMenuDict = {
      * Component Menus
      ******************/
     STATISTICS: [{
-        title: 'Chart',
+        title: 'Dashboard',
         icon: (<Timeline />),
-        url: '/statistics/chart',
+        url: '/statistics/dashboard',
         value: 101,
-        need_permission: false
-    }, {
-        title: 'HeatMap',
-        icon: (<Layers />),
-        url: '/statistics/heatmap',
-        value: 102,
         need_permission: false
     }],
 

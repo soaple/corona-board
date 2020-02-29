@@ -12,11 +12,8 @@ import Layout from './Layout';
 import FullScreenLayout from './FullScreenLayout';
 // Index
 const IntroPage = loadable(() => import('components/page/IntroPage'));
-// Component
-const ComponentChartsPage= loadable(() => import('components/page/ComponentChartsPage'));
-// Layering
-const LayeringMapPage= loadable(() => import('components/page/LayeringMapPage'));
-const LayeringHeatMapPage= loadable(() => import('components/page/LayeringHeatMapPage'));
+// Statistics
+const DashboardPage= loadable(() => import('components/page/DashboardPage'));
 // Not found
 const NotFoundPage= loadable(() => import('components/page/NotFoundPage'));
 
@@ -82,10 +79,9 @@ class App extends React.Component {
                                 selectedThemeKey={selectedThemeKey}
                                 onThemeChange={this.onThemeChange}>
                                 <Switch>
-                                    <Route exact path='/' component={() => { return <Redirect to='/statistics/chart' /> }} />
+                                    <Route exact path='/' component={() => { return <Redirect to='/statistics/dashboard' /> }} />
                                     {/* Statistics */}
-                                    <Route path='/statistics/chart' component={ComponentChartsPage} />
-                                    <Route path="/statistics/heatmap" component={LayeringHeatMapPage} />
+                                    <Route path='/statistics/dashboard' component={DashboardPage} />
                                     {/* Not found */}
                                     <Route path='*' component={NotFoundPage} />
                                 </Switch>
