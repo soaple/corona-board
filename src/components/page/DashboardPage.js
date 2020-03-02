@@ -26,7 +26,7 @@ import {
     Treemap,
 } from '@stickyboard/recharts';
 import { NumberWidget } from '@stickyboard/number';
-import { OpenLayers } from '@stickyboard/openlayers';
+import { HeatMap } from '@stickyboard/openlayers';
 
 import ApiManager from 'network/ApiManager';
 import StatusCode from 'network/StatusCode';
@@ -50,7 +50,7 @@ const initialLayout = {
         { i: 'CountryDeaths', x: 6, y: 4, w: 3, h: 2 },
         { i: 'CountryFatalityRate', x: 9, y: 4, w: 3, h: 2 },
         { i: 'LineChart', x: 6, y: 6, w: 6, h: 6 },
-        { i: 'MapView', x: 0, y: 6, w: 6, h: 11 },
+        { i: 'HeatMap', x: 0, y: 6, w: 6, h: 11 },
         { i: 'ComposedChart', x: 6, y: 12, w: 6, h: 5 },
     ],
     md: [
@@ -59,7 +59,7 @@ const initialLayout = {
         { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'MapView', x: 0, y: 6, w: 4, h: 6 },
+        { i: 'HeatMap', x: 0, y: 6, w: 4, h: 6 },
         { i: 'ComposedChart', x: 8, y: 0, w: 4, h: 6 },
     ],
     sm: [
@@ -69,7 +69,7 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'MapView', x: 0, y: 18, w: 4, h: 6 },
+        { i: 'HeatMap', x: 0, y: 18, w: 4, h: 6 },
         { i: 'ComposedChart', x: 4, y: 6, w: 4, h: 6 },
     ],
     xs: [
@@ -79,7 +79,7 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 6, h: 6 },
-        { i: 'MapView', x: 0, y: 12, w: 6, h: 6 },
+        { i: 'HeatMap', x: 0, y: 12, w: 6, h: 6 },
         { i: 'ComposedChart', x: 0, y: 18, w: 6, h: 6 },
     ],
     xxs: [
@@ -89,7 +89,7 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'MapView', x: 0, y: 18, w: 4, h: 6 },
+        { i: 'HeatMap', x: 0, y: 18, w: 4, h: 6 },
         { i: 'ComposedChart', x: 0, y: 12, w: 4, h: 6 },
     ],
 };
@@ -106,7 +106,7 @@ const initialBlocks = [
     { i: 'CountryDeaths' },
     { i: 'CountryFatalityRate' },
     { i: 'LineChart' },
-    { i: 'MapView' },
+    { i: 'HeatMap' },
     { i: 'ComposedChart' },
 ];
 
@@ -264,6 +264,13 @@ class DashboardPage extends React.Component {
             : [];
 
         const selectedCountryLatest = countryLatestDict[selectedCountryName];
+
+        const pointList = Object.values(countryLatestDict).map((countryLatest) => {
+            return {
+                geometry: [ countryLatest.location.lng, countryLatest.location.lat ],
+                weight: countryLatest.confirmed,
+            }
+        })
 
         switch (block.i) {
             case 'TitleWorld':
@@ -472,24 +479,18 @@ class DashboardPage extends React.Component {
                         />
                     </Sticker>
                 );
-            case 'MapView':
+            case 'HeatMap':
                 return (
                     <Sticker key={block.i}>
-                        <OpenLayers
-                            isHeatmapMode={true}
+                        <HeatMap
                             zoom={3}
                             minZoom={2}
                             maxZoom={17}
-                            longitude={
-                                selectedCountry
-                                    ? selectedCountry.location.lng
-                                    : 127.024792
-                            }
-                            latitude={
-                                selectedCountry
-                                    ? selectedCountry.location.lat
-                                    : 37.504296
-                            }
+                            blur={30}
+                            radius={20}
+                            longitude={127.024792}
+                            latitude={37.504296}
+                            pointList={pointList}
                         />
                     </Sticker>
                 );
