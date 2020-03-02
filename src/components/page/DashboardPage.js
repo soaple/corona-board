@@ -253,16 +253,16 @@ class DashboardPage extends React.Component {
         }
     };
 
-    generateBlock = (block) => {
+    generateBlock = (block, data) => {
         const {
             selectedCountryName,
             brief,
             countryLatestDict,
             countryTimeseriesDict,
-        } = this.state;
+        } = data;
         const { theme } = this.props;
 
-        let colors = theme.colors.colorArray;
+        const colors = theme.colors.colorArray;
 
         const selectedCountry = countryTimeseriesDict[selectedCountryName];
         const targetTimeseriesData = selectedCountry
@@ -540,10 +540,9 @@ class DashboardPage extends React.Component {
     };
 
     render() {
-        const { classes, theme } = this.props;
-
         return (
             <PageBaseContainer
+                data={this.state}
                 generateBlock={this.generateBlock}
                 initialLayout={initialLayout}
                 initialBlocks={initialBlocks}
