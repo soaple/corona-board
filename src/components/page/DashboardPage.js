@@ -9,6 +9,8 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import Typography from '@material-ui/core/Typography';
+import PersonIcon from '@material-ui/icons/Person';
 
 import { Sticker } from '@stickyboard/core';
 import {
@@ -23,6 +25,7 @@ import {
     ScatterChart,
     Treemap,
 } from '@stickyboard/recharts';
+import { NumberWidget } from '@stickyboard/number';
 import { OpenLayers } from '@stickyboard/openlayers';
 
 import ApiManager from 'network/ApiManager';
@@ -36,14 +39,26 @@ const styles = (theme) => ({
 
 const initialLayout = {
     lg: [
-        { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
-        { i: 'LineChart', x: 6, y: 1, w: 6, h: 8 },
-        { i: 'BarChart', x: 0, y: 1, w: 6, h: 16 },
-        { i: 'StackedBarChart', x: 9, y: 9, w: 3, h: 8 },
-        { i: 'ComposedChart', x: 6, y: 9, w: 3, h: 8 },
+        { i: 'TitleWorld', x: 0, y: 0, w: 12, h: 1 },
+        { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
+        { i: 'BriefRecovered', x: 3, y: 1, w: 3, h: 2 },
+        { i: 'BriefDeaths', x: 6, y: 1, w: 3, h: 2 },
+        { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
+        { i: 'SelectMenu', x: 0, y: 3, w: 12, h: 1 },
+        { i: 'CountryConfirmed', x: 0, y: 4, w: 3, h: 2 },
+        { i: 'CountryRecovered', x: 3, y: 4, w: 3, h: 2 },
+        { i: 'CountryDeaths', x: 6, y: 4, w: 3, h: 2 },
+        { i: 'CountryFatalityRate', x: 9, y: 4, w: 3, h: 2 },
+        { i: 'LineChart', x: 6, y: 6, w: 6, h: 6 },
+        { i: 'BarChart', x: 0, y: 6, w: 6, h: 11 },
+        { i: 'StackedBarChart', x: 9, y: 12, w: 3, h: 5 },
+        { i: 'ComposedChart', x: 6, y: 12, w: 3, h: 5 },
     ],
     md: [
         { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
+        { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
+        { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
+        { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
         { i: 'BarChart', x: 0, y: 6, w: 4, h: 6 },
         { i: 'StackedBarChart', x: 4, y: 0, w: 4, h: 6 },
@@ -51,6 +66,10 @@ const initialLayout = {
     ],
     sm: [
         { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
+        { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
+        { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
+        { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
+        { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
         { i: 'BarChart', x: 0, y: 18, w: 4, h: 6 },
         { i: 'StackedBarChart', x: 4, y: 0, w: 4, h: 6 },
@@ -58,6 +77,10 @@ const initialLayout = {
     ],
     xs: [
         { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
+        { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
+        { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
+        { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
+        { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 6, h: 6 },
         { i: 'BarChart', x: 0, y: 12, w: 6, h: 6 },
         { i: 'StackedBarChart', x: 0, y: 6, w: 6, h: 6 },
@@ -65,6 +88,10 @@ const initialLayout = {
     ],
     xxs: [
         { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
+        { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
+        { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
+        { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
+        { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
         { i: 'BarChart', x: 0, y: 18, w: 4, h: 6 },
         { i: 'StackedBarChart', x: 0, y: 6, w: 4, h: 6 },
@@ -73,7 +100,16 @@ const initialLayout = {
 };
 
 const initialBlocks = [
+    { i: 'TitleWorld' },
+    { i: 'BriefConfirmed' },
+    { i: 'BriefRecovered' },
+    { i: 'BriefDeaths' },
+    { i: 'BriefFatalityRate' },
     { i: 'SelectMenu' },
+    { i: 'CountryConfirmed' },
+    { i: 'CountryRecovered' },
+    { i: 'CountryDeaths' },
+    { i: 'CountryFatalityRate' },
     { i: 'LineChart' },
     { i: 'BarChart' },
     { i: 'StackedBarChart' },
@@ -85,12 +121,11 @@ class DashboardPage extends React.Component {
         super(props);
 
         this.state = {
-            countryDict: {},
             selectedCountryName: '',
             // Data
             brief: null,
-            latest: null,
-            timeseries: null,
+            countryLatestDict: {},
+            countryTimeseriesDict: {},
         };
     }
 
@@ -122,8 +157,37 @@ class DashboardPage extends React.Component {
     readLatestCallback = (statusCode, response) => {
         switch (statusCode) {
             case StatusCode.OK:
+                let countryLatestDict = {};
+
+                response.forEach((data) => {
+                    const {
+                        countryregion,
+                        provincestate,
+                        location,
+                        confirmed,
+                        deaths,
+                        recovered,
+                        lastupdate,
+                    } = data;
+
+                    // Extract country region list
+                    let name = countryregion;
+                    if (provincestate !== '') {
+                        name += ` (${provincestate})`;
+                    }
+
+                    countryLatestDict[name] = {
+                        name: name,
+                        location: location,
+                        confirmed: confirmed,
+                        deaths: deaths,
+                        recovered: recovered,
+                        lastUpdate: lastupdate,
+                    };
+                });
+
                 this.setState({
-                    latest: response,
+                    countryLatestDict: countryLatestDict,
                 });
                 break;
             default:
@@ -135,7 +199,7 @@ class DashboardPage extends React.Component {
     readTimeseriesCallback = (statusCode, response) => {
         switch (statusCode) {
             case StatusCode.OK:
-                let countryDict = {};
+                let countryTimeseriesDict = {};
 
                 // Sort country by name
                 response.sort((a, b) => {
@@ -171,16 +235,16 @@ class DashboardPage extends React.Component {
                         }
                     );
 
-                    countryDict[name] = {
+                    countryTimeseriesDict[name] = {
                         name: name,
                         location: location,
-                        lastUpdate: lastupdate,
                         timeseries: convertedTimeseries,
+                        lastUpdate: lastupdate,
                     };
                 });
 
                 this.setState({
-                    countryDict: countryDict,
+                    countryTimeseriesDict: countryTimeseriesDict,
                 });
                 break;
             default:
@@ -191,46 +255,201 @@ class DashboardPage extends React.Component {
 
     generateBlock = (block) => {
         const {
-            countryDict,
             selectedCountryName,
             brief,
-            latest,
-            timeseries,
+            countryLatestDict,
+            countryTimeseriesDict,
         } = this.state;
         const { theme } = this.props;
 
         let colors = theme.colors.colorArray;
 
-        const selectedCountry = countryDict[selectedCountryName];
+        const selectedCountry = countryTimeseriesDict[selectedCountryName];
         const targetTimeseriesData = selectedCountry
             ? selectedCountry.timeseries
             : [];
 
-        console.log('selectedCountry', selectedCountry)
+        const selectedCountryLatest = countryLatestDict[selectedCountryName];
 
         switch (block.i) {
+            case 'TitleWorld':
+                return (
+                    <Sticker key={block.i}>
+                        <div style={{ fontSize: 32, fontWeight: 'bold' }}>
+                            World Wide
+                        </div>
+                    </Sticker>
+                );
+            case 'BriefConfirmed':
+                return (
+                    <Sticker key={block.i}>
+                        <NumberWidget
+                            icon={<PersonIcon />}
+                            backgroundColor={theme.colors.colorArray[0]}
+                            defaultColor={theme.colors.colorLight}
+                            valueColor={theme.colors.colorLight}
+                            title={'Confirmed'}
+                            value={brief ? brief.confirmed : '-'}
+                            unit={''}
+                        />
+                    </Sticker>
+                );
+            case 'BriefRecovered':
+                return (
+                    <Sticker key={block.i}>
+                        <NumberWidget
+                            icon={<PersonIcon />}
+                            backgroundColor={theme.colors.colorArray[2]}
+                            defaultColor={theme.colors.colorLight}
+                            valueColor={theme.colors.colorLight}
+                            title={'Recovered'}
+                            value={brief ? brief.recovered : '-'}
+                            unit={''}
+                        />
+                    </Sticker>
+                );
+            case 'BriefDeaths':
+                return (
+                    <Sticker key={block.i}>
+                        <NumberWidget
+                            icon={<PersonIcon />}
+                            backgroundColor={theme.colors.colorArray[1]}
+                            defaultColor={theme.colors.colorLight}
+                            valueColor={theme.colors.colorLight}
+                            title={'Deaths'}
+                            value={brief ? brief.deaths : '-'}
+                            unit={''}
+                        />
+                    </Sticker>
+                );
+            case 'BriefFatalityRate':
+                return (
+                    <Sticker key={block.i}>
+                        <NumberWidget
+                            icon={<PersonIcon />}
+                            backgroundColor={theme.colors.colorArray[4]}
+                            defaultColor={theme.colors.colorLight}
+                            valueColor={theme.colors.colorLight}
+                            title={'Fatality rate'}
+                            value={
+                                brief
+                                    ? `${(
+                                          (brief.deaths / brief.confirmed) *
+                                          100
+                                      ).toFixed(2)}`
+                                    : '-'
+                            }
+                            unit={'%'}
+                        />
+                    </Sticker>
+                );
             case 'SelectMenu':
                 return (
                     <Sticker key={block.i}>
-                        <FormControl style={{ minWidth: 200 }}>
-                            <InputLabel>Country & Region</InputLabel>
-                            <Select
-                                value={selectedCountryName}
-                                onChange={this.onSelectCountry}>
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                {Object.values(countryDict).map((country) => {
-                                    return (
-                                        <MenuItem
-                                            key={country.name}
-                                            value={country.name}>
-                                            {country.name}
-                                        </MenuItem>
-                                    );
-                                })}
-                            </Select>
-                        </FormControl>
+                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div style={{ fontSize: 32, fontWeight: 'bold' }}>
+                                Regional
+                            </div>
+
+                            <FormControl
+                                style={{ minWidth: 200, marginLeft: 32 }}>
+                                <InputLabel>Country & Region</InputLabel>
+                                <Select
+                                    value={selectedCountryName}
+                                    onChange={this.onSelectCountry}>
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    {Object.values(countryTimeseriesDict).map(
+                                        (country) => {
+                                            return (
+                                                <MenuItem
+                                                    key={country.name}
+                                                    value={country.name}>
+                                                    {country.name}
+                                                </MenuItem>
+                                            );
+                                        }
+                                    )}
+                                </Select>
+                            </FormControl>
+                        </div>
+                    </Sticker>
+                );
+            case 'CountryConfirmed':
+                return (
+                    <Sticker key={block.i}>
+                        <NumberWidget
+                            icon={<PersonIcon />}
+                            backgroundColor={theme.colors.colorArray[3]}
+                            defaultColor={theme.colors.colorLight}
+                            valueColor={theme.colors.colorLight}
+                            title={'Confirmed'}
+                            value={
+                                selectedCountryLatest
+                                    ? selectedCountryLatest.confirmed
+                                    : '-'
+                            }
+                            unit={''}
+                        />
+                    </Sticker>
+                );
+            case 'CountryRecovered':
+                return (
+                    <Sticker key={block.i}>
+                        <NumberWidget
+                            icon={<PersonIcon />}
+                            backgroundColor={theme.colors.colorArray[5]}
+                            defaultColor={theme.colors.colorLight}
+                            valueColor={theme.colors.colorLight}
+                            title={'Recovered'}
+                            value={
+                                selectedCountryLatest
+                                    ? selectedCountryLatest.recovered
+                                    : '-'
+                            }
+                            unit={''}
+                        />
+                    </Sticker>
+                );
+            case 'CountryDeaths':
+                return (
+                    <Sticker key={block.i}>
+                        <NumberWidget
+                            icon={<PersonIcon />}
+                            backgroundColor={theme.colors.colorArray[4]}
+                            defaultColor={theme.colors.colorLight}
+                            valueColor={theme.colors.colorLight}
+                            title={'Deaths'}
+                            value={
+                                selectedCountryLatest
+                                    ? selectedCountryLatest.deaths
+                                    : '-'
+                            }
+                            unit={''}
+                        />
+                    </Sticker>
+                );
+            case 'CountryFatalityRate':
+                return (
+                    <Sticker key={block.i}>
+                        <NumberWidget
+                            icon={<PersonIcon />}
+                            backgroundColor={theme.colors.colorArray[10]}
+                            defaultColor={theme.colors.colorLight}
+                            valueColor={theme.colors.colorLight}
+                            title={'Fatality rate'}
+                            value={
+                                selectedCountryLatest
+                                    ? `${(
+                                          (selectedCountryLatest.deaths /
+                                              selectedCountryLatest.confirmed) *
+                                          100
+                                      ).toFixed(2)}`
+                                    : '-'
+                            }
+                            unit={'%'}
+                        />
                     </Sticker>
                 );
             case 'LineChart':
@@ -246,14 +465,14 @@ class DashboardPage extends React.Component {
                                     color: colors[0],
                                 },
                                 {
-                                    key: 'deaths',
-                                    name: 'Deaths',
-                                    color: colors[1],
-                                },
-                                {
                                     key: 'recovered',
                                     name: 'Recovered',
                                     color: colors[2],
+                                },
+                                {
+                                    key: 'deaths',
+                                    name: 'Deaths',
+                                    color: colors[1],
                                 },
                             ]}
                         />

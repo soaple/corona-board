@@ -55,7 +55,7 @@ require('react-grid-layout/css/styles.css');
 require('react-resizable/css/styles.css');
 require('../../static/css/react-grid-layout.css');
 
-const styles = theme => ({
+const styles = (theme) => ({
     root: {
         width: '100%',
         height: '100%',
@@ -89,19 +89,20 @@ const styles = theme => ({
         // color: theme.colors.colorDark,
         '&:hover': {
             cursor: 'pointer',
-        }
+        },
     },
     appBarTitleMargin: {
         flex: 1,
     },
-    contactButton: {
-        marginRight: theme.spacing(2),
-        [theme.breakpoints.up('lg')]: {
-            marginRight: theme.spacing(4),
+    appBarStickyBoard: {
+        fontSize: 16,
+        paddingRight: 16,
+        color: theme.colors.colorLight,
+        '&:hover': {
+            cursor: 'pointer',
+            color: theme.colors.colorLight,
+            textDecoration: 'none',
         },
-    },
-    contactButtonIcon: {
-        marginLeft: theme.spacing(1),
     },
     menuIcon: {
         // color: theme.colors.colorDark,
@@ -191,8 +192,8 @@ const styles = theme => ({
 const isGuestModeAvailable = true;
 
 class Layout extends React.Component {
-    constructor (props) {
-        super(props)
+    constructor(props) {
+        super(props);
 
         let currentTimeMillis = new Date().getTime();
 
@@ -206,17 +207,23 @@ class Layout extends React.Component {
                 {
                     type: Const.NOTI_TYPE_WARNING,
                     title: 'CCU is too big!',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_HOUR * 3),
+                    time: new Date(
+                        currentTimeMillis - Const.TIME_MILLIS_HOUR * 3
+                    ),
                 },
                 {
                     type: Const.NOTI_TYPE_NOTICE,
                     title: 'Your permissions are updated.',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_HOUR * 6),
+                    time: new Date(
+                        currentTimeMillis - Const.TIME_MILLIS_HOUR * 6
+                    ),
                 },
                 {
                     type: Const.NOTI_TYPE_EMERGENCY,
                     title: 'Server is disconnected!',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_HOUR * 9),
+                    time: new Date(
+                        currentTimeMillis - Const.TIME_MILLIS_HOUR * 9
+                    ),
                 },
                 {
                     type: Const.NOTI_TYPE_WARNING,
@@ -226,32 +233,50 @@ class Layout extends React.Component {
                 {
                     type: Const.NOTI_TYPE_NOTICE,
                     title: 'Daily new user is increasing!',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_DAY - Const.TIME_MILLIS_HOUR * 3),
+                    time: new Date(
+                        currentTimeMillis -
+                            Const.TIME_MILLIS_DAY -
+                            Const.TIME_MILLIS_HOUR * 3
+                    ),
                 },
                 {
                     type: Const.NOTI_TYPE_EMERGENCY,
                     title: 'Server instance will down soon!',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_DAY - Const.TIME_MILLIS_HOUR * 6),
+                    time: new Date(
+                        currentTimeMillis -
+                            Const.TIME_MILLIS_DAY -
+                            Const.TIME_MILLIS_HOUR * 6
+                    ),
                 },
                 {
                     type: Const.NOTI_TYPE_NOTICE,
                     title: 'Database version updated.',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_DAY - Const.TIME_MILLIS_HOUR * 9),
+                    time: new Date(
+                        currentTimeMillis -
+                            Const.TIME_MILLIS_DAY -
+                            Const.TIME_MILLIS_HOUR * 9
+                    ),
                 },
                 {
                     type: Const.NOTI_TYPE_NOTICE,
                     title: 'Weekly report updated.',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_3_DAYS),
+                    time: new Date(
+                        currentTimeMillis - Const.TIME_MILLIS_3_DAYS
+                    ),
                 },
                 {
                     type: Const.NOTI_TYPE_EMERGENCY,
                     title: 'Server disconnected!',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_3_DAYS),
+                    time: new Date(
+                        currentTimeMillis - Const.TIME_MILLIS_3_DAYS
+                    ),
                 },
                 {
                     type: Const.NOTI_TYPE_WARNING,
                     title: 'CCU is too big!',
-                    time: new Date(currentTimeMillis - Const.TIME_MILLIS_3_DAYS),
+                    time: new Date(
+                        currentTimeMillis - Const.TIME_MILLIS_3_DAYS
+                    ),
                 },
             ],
             // Permission
@@ -266,89 +291,92 @@ class Layout extends React.Component {
             // Auth
             auth: CookieManager.getCookie('userId') !== undefined,
             isSuperuser: CookieManager.getCookie('isSuperuser') === 'true',
-        }
+        };
     }
 
-    componentDidMount () {
+    componentDidMount() {
         if (this.state.auth || !isGuestModeAvailable) {
             if (document.cookie === undefined || document.cookie === '') {
-                window.location = '/signin'
+                window.location = '/signin';
             }
         }
     }
 
     handleMenuDrawerToggle = () => {
         this.setState({ menuDrawerOpen: !this.state.menuDrawerOpen });
-    }
+    };
 
     handleNotiDrawerToggle = () => {
         this.setState({ notiDrawerOpen: !this.state.notiDrawerOpen });
-    }
+    };
 
     openThemeMenu = (event) => {
         this.setState({ themeMenuAnchorElem: event.currentTarget });
-    }
+    };
 
     closeThemeMenu = () => {
         this.setState({ themeMenuAnchorElem: null });
-    }
+    };
 
     onThemeChange = (themeKey) => {
-        this.setState({
-            themeMenuAnchorElem: null
-        }, () => {
-            this.props.onThemeChange(themeKey);
-        });
-    }
+        this.setState(
+            {
+                themeMenuAnchorElem: null,
+            },
+            () => {
+                this.props.onThemeChange(themeKey);
+            }
+        );
+    };
 
     openUserMenu = (event) => {
         this.setState({ userMenuAnchorElem: event.currentTarget });
-    }
+    };
 
     closeUserMenu = () => {
         this.setState({ userMenuAnchorElem: null });
-    }
+    };
 
     onSignInClicked = () => {
         window.location = '/signin';
-    }
+    };
 
     onSettingsClicked = () => {
         if (this.state.auth || !isGuestModeAvailable) {
             window.location = '/settings';
         }
-    }
+    };
 
     onSignOutClicked = () => {
         if (this.state.auth || !isGuestModeAvailable) {
             CookieManager.deleteAllCookie();
             window.location = '/signin';
         }
-    }
+    };
 
     readUserPermissionsCallback = (statusCode, response) => {
         switch (statusCode) {
-        case StatusCode.OK:
-            // console.log('---------------------')
-            // console.log(response)
+            case StatusCode.OK:
+                // console.log('---------------------')
+                // console.log(response)
 
-            var permissionKeyArray = [];
+                var permissionKeyArray = [];
 
-            response.forEach((adminPermission) => {
-                var key = adminPermission.permission.key;
-                permissionKeyArray.push(key);
-            });
+                response.forEach((adminPermission) => {
+                    var key = adminPermission.permission.key;
+                    permissionKeyArray.push(key);
+                });
 
-            // console.log(permissionKeyArray)
-            this.setState({ permissionKeyArray: permissionKeyArray });
-            break;
-        case StatusCode.NOT_FOUND:
-            break;
-        default:
-            alert(response.msg);
-            break;
+                // console.log(permissionKeyArray)
+                this.setState({ permissionKeyArray: permissionKeyArray });
+                break;
+            case StatusCode.NOT_FOUND:
+                break;
+            default:
+                alert(response.msg);
+                break;
         }
-    }
+    };
 
     render() {
         const {
@@ -357,21 +385,21 @@ class Layout extends React.Component {
             auth,
             isSuperuser,
         } = this.state;
-        const {
-            classes, theme,
-            themeKeys, selectedThemeKey,
-        } = this.props;
+        const { classes, theme, themeKeys, selectedThemeKey } = this.props;
 
         const isThemeMenuOpened = Boolean(themeMenuAnchorElem);
         const isUserMenuOpened = Boolean(userMenuAnchorElem);
 
-        const childrenWithExtraProp = React.Children.map(this.props.children, child => {
-            return React.cloneElement(child, {
-                // store: store,
-                // showMessageSnackbar: this.props.showMessageSnackbar,
-                // hideMessageSnackbar: this.props.hideMessageSnackbar,
-            });
-        });
+        const childrenWithExtraProp = React.Children.map(
+            this.props.children,
+            (child) => {
+                return React.cloneElement(child, {
+                    // store: store,
+                    // showMessageSnackbar: this.props.showMessageSnackbar,
+                    // hideMessageSnackbar: this.props.hideMessageSnackbar,
+                });
+            }
+        );
 
         const getNotiAvatarByType = (notiType) => {
             if (notiType === Const.NOTI_TYPE_NOTICE) {
@@ -379,19 +407,19 @@ class Layout extends React.Component {
                     <Avatar className={classes.notiIconTypeNotice}>
                         <Info />
                     </Avatar>
-                )
+                );
             } else if (notiType === Const.NOTI_TYPE_WARNING) {
                 return (
                     <Avatar className={classes.notiIconTypeWarning}>
                         <Warning />
                     </Avatar>
-                )
+                );
             } else if (notiType === Const.NOTI_TYPE_EMERGENCY) {
                 return (
                     <Avatar className={classes.notiIconTypeEmergency}>
                         <ErrorOutline />
                     </Avatar>
-                )
+                );
             }
         };
 
@@ -399,59 +427,73 @@ class Layout extends React.Component {
             <div className={classes.root}>
                 <div className={classes.appFrame}>
                     {/* AppBar */}
-                    <AppBar
-                        position='absolute'
-                        className={classes.appBar}>
+                    <AppBar position="absolute" className={classes.appBar}>
                         <Toolbar>
                             <Hidden lgUp>
                                 <IconButton
-                                    color='inherit'
-                                    aria-label='open drawer'
+                                    color="inherit"
+                                    aria-label="open drawer"
                                     onClick={this.handleMenuDrawerToggle}>
                                     <MenuIcon />
                                 </IconButton>
                             </Hidden>
 
                             <img
-                                src='/static/image/favicon.png'
-                                className={classes.appBarLogo} />
+                                src="/static/image/favicon.png"
+                                className={classes.appBarLogo}
+                            />
 
                             <Typography
-                                type='title'
-                                color='inherit'
+                                type="title"
+                                color="inherit"
                                 noWrap
                                 className={classes.appBarTitle}
-                                onClick={() => { window.location = '/' }}>
+                                onClick={() => {
+                                    window.location = '/';
+                                }}>
                                 CoronaBoard
                             </Typography>
 
                             <Typography
-                                className={classes.appBarTitleMargin}>
-                            </Typography>
+                                className={
+                                    classes.appBarTitleMargin
+                                }></Typography>
+
+
+                            <a
+                                className={classes.appBarStickyBoard}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={"http://stickyboard.co.kr"}>
+                                Powered by <b>StickyBoard</b>
+                            </a>
 
                             {/* GitHub Star */}
                             <Hidden xsDown>
                                 <iframe
-                                    src='https://ghbtns.com/github-btn.html?user=soaple&repo=stickyboard&type=star&count=true&size=large'
-                                    frameBorder='0'
-                                    scrolling='0'
-                                    width='130px'
-                                    height='30px' />
+                                    src="https://ghbtns.com/github-btn.html?user=soaple&repo=stickyboard&type=star&count=true&size=large"
+                                    frameBorder="0"
+                                    scrolling="0"
+                                    width="130px"
+                                    height="30px"
+                                />
                             </Hidden>
 
                             {/* Theme select menu */}
                             <IconButton
                                 className={classes.avatar}
-                                aria-owns={isThemeMenuOpened ? 'menu-appbar' : null}
-                                aria-haspopup='true'
+                                aria-owns={
+                                    isThemeMenuOpened ? 'menu-appbar' : null
+                                }
+                                aria-haspopup="true"
                                 onClick={this.openThemeMenu}
-                                color='inherit'>
+                                color="inherit">
                                 <ColorLens />
                             </IconButton>
 
                             <Menu
-                                styles={{width: 500}}
-                                id='menu-appbar'
+                                styles={{ width: 500 }}
+                                id="menu-appbar"
                                 anchorEl={themeMenuAnchorElem}
                                 anchorOrigin={{
                                     vertical: 'top',
@@ -467,8 +509,12 @@ class Layout extends React.Component {
                                     return (
                                         <MenuItem
                                             key={themeKey}
-                                            selected={themeKey === selectedThemeKey}
-                                            onClick={() => this.onThemeChange(themeKey)}>
+                                            selected={
+                                                themeKey === selectedThemeKey
+                                            }
+                                            onClick={() =>
+                                                this.onThemeChange(themeKey)
+                                            }>
                                             {themeKey}
                                         </MenuItem>
                                     );
@@ -480,7 +526,7 @@ class Layout extends React.Component {
                     {/* Drawer - Mobile */}
                     <Hidden lgUp>
                         <Drawer
-                            variant='temporary'
+                            variant="temporary"
                             anchor={'left'}
                             open={this.state.menuDrawerOpen}
                             classes={{
@@ -492,28 +538,34 @@ class Layout extends React.Component {
                             }}>
                             <DrawerMenu
                                 isSuperuser={isSuperuser}
-                                permissionKeyArray={this.state.permissionKeyArray} />
+                                permissionKeyArray={
+                                    this.state.permissionKeyArray
+                                }
+                            />
                         </Drawer>
                     </Hidden>
 
                     {/* Drawer - Desktop */}
                     <Hidden mdDown>
                         <Drawer
-                            variant='permanent'
+                            variant="permanent"
                             open
                             classes={{
                                 paper: classes.drawerPaper,
                             }}>
                             <DrawerMenu
                                 isSuperuser={isSuperuser}
-                                permissionKeyArray={this.state.permissionKeyArray} />
+                                permissionKeyArray={
+                                    this.state.permissionKeyArray
+                                }
+                            />
                         </Drawer>
                     </Hidden>
 
                     {/* Right Drawer - Notification */}
                     <Drawer
-                        type='temporary'
-                        anchor='right'
+                        type="temporary"
+                        anchor="right"
                         open={this.state.notiDrawerOpen}
                         classes={{
                             paper: classes.notiDrawer,
@@ -524,15 +576,14 @@ class Layout extends React.Component {
                         }}>
                         {this.state.notifications.map((noti, index) => {
                             return (
-                                <Card
-                                    key={index}
-                                    className={classes.notiItem}>
+                                <Card key={index} className={classes.notiItem}>
                                     <CardHeader
                                         avatar={getNotiAvatarByType(noti.type)}
                                         title={noti.title}
-                                        subheader={DateUtil.format(noti.time)}/>
+                                        subheader={DateUtil.format(noti.time)}
+                                    />
                                 </Card>
-                            )
+                            );
                         })}
                     </Drawer>
 
@@ -542,7 +593,7 @@ class Layout extends React.Component {
                     </main>
                 </div>
             </div>
-        )
+        );
     }
 }
 
