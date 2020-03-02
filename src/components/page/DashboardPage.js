@@ -51,8 +51,7 @@ const initialLayout = {
         { i: 'CountryFatalityRate', x: 9, y: 4, w: 3, h: 2 },
         { i: 'LineChart', x: 6, y: 6, w: 6, h: 6 },
         { i: 'BarChart', x: 0, y: 6, w: 6, h: 11 },
-        { i: 'StackedBarChart', x: 9, y: 12, w: 3, h: 5 },
-        { i: 'ComposedChart', x: 6, y: 12, w: 3, h: 5 },
+        { i: 'ComposedChart', x: 6, y: 12, w: 6, h: 5 },
     ],
     md: [
         { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
@@ -61,7 +60,6 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
         { i: 'BarChart', x: 0, y: 6, w: 4, h: 6 },
-        { i: 'StackedBarChart', x: 4, y: 0, w: 4, h: 6 },
         { i: 'ComposedChart', x: 8, y: 0, w: 4, h: 6 },
     ],
     sm: [
@@ -72,7 +70,6 @@ const initialLayout = {
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
         { i: 'BarChart', x: 0, y: 18, w: 4, h: 6 },
-        { i: 'StackedBarChart', x: 4, y: 0, w: 4, h: 6 },
         { i: 'ComposedChart', x: 4, y: 6, w: 4, h: 6 },
     ],
     xs: [
@@ -83,7 +80,6 @@ const initialLayout = {
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 6, h: 6 },
         { i: 'BarChart', x: 0, y: 12, w: 6, h: 6 },
-        { i: 'StackedBarChart', x: 0, y: 6, w: 6, h: 6 },
         { i: 'ComposedChart', x: 0, y: 18, w: 6, h: 6 },
     ],
     xxs: [
@@ -94,7 +90,6 @@ const initialLayout = {
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
         { i: 'BarChart', x: 0, y: 18, w: 4, h: 6 },
-        { i: 'StackedBarChart', x: 0, y: 6, w: 4, h: 6 },
         { i: 'ComposedChart', x: 0, y: 12, w: 4, h: 6 },
     ],
 };
@@ -112,7 +107,6 @@ const initialBlocks = [
     { i: 'CountryFatalityRate' },
     { i: 'LineChart' },
     { i: 'BarChart' },
-    { i: 'StackedBarChart' },
     { i: 'ComposedChart' },
 ];
 
@@ -499,40 +493,19 @@ class DashboardPage extends React.Component {
                         />
                     </Sticker>
                 );
-            case 'StackedBarChart':
-                return (
-                    <Sticker key={block.i}>
-                        <StackedBarChart
-                            data={targetTimeseriesData}
-                            xAxisDataKey={'date'}
-                            barDataArray={[
-                                {
-                                    key: 'confirmed',
-                                    name: 'Confirmed',
-                                    color: colors[0],
-                                },
-                                {
-                                    key: 'recovered',
-                                    name: 'Recovered',
-                                    color: colors[1],
-                                },
-                            ]}
-                        />
-                    </Sticker>
-                );
             case 'ComposedChart':
                 return (
                     <Sticker key={block.i}>
                         <ComposedChart
                             data={targetTimeseriesData}
                             xAxisDataKey={'date'}
-                            barDataKey={'confirmed'}
-                            barName={'Confirmed'}
+                            barDataKey={'recovered'}
+                            barName={'Recovered'}
                             barColor={colors[2]}
                             lineType={'linear'}
-                            lineDataKey={'recovered'}
-                            lineName={'Recovered'}
-                            lineColor={colors[3]}
+                            lineDataKey={'confirmed'}
+                            lineName={'Confirmed'}
+                            lineColor={colors[0]}
                         />
                     </Sticker>
                 );
