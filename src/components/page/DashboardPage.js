@@ -50,7 +50,7 @@ const initialLayout = {
         { i: 'CountryDeaths', x: 6, y: 4, w: 3, h: 2 },
         { i: 'CountryFatalityRate', x: 9, y: 4, w: 3, h: 2 },
         { i: 'LineChart', x: 6, y: 6, w: 6, h: 6 },
-        { i: 'BarChart', x: 0, y: 6, w: 6, h: 11 },
+        { i: 'MapView', x: 0, y: 6, w: 6, h: 11 },
         { i: 'ComposedChart', x: 6, y: 12, w: 6, h: 5 },
     ],
     md: [
@@ -59,7 +59,7 @@ const initialLayout = {
         { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'BarChart', x: 0, y: 6, w: 4, h: 6 },
+        { i: 'MapView', x: 0, y: 6, w: 4, h: 6 },
         { i: 'ComposedChart', x: 8, y: 0, w: 4, h: 6 },
     ],
     sm: [
@@ -69,7 +69,7 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'BarChart', x: 0, y: 18, w: 4, h: 6 },
+        { i: 'MapView', x: 0, y: 18, w: 4, h: 6 },
         { i: 'ComposedChart', x: 4, y: 6, w: 4, h: 6 },
     ],
     xs: [
@@ -79,7 +79,7 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 6, h: 6 },
-        { i: 'BarChart', x: 0, y: 12, w: 6, h: 6 },
+        { i: 'MapView', x: 0, y: 12, w: 6, h: 6 },
         { i: 'ComposedChart', x: 0, y: 18, w: 6, h: 6 },
     ],
     xxs: [
@@ -89,7 +89,7 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
         { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'BarChart', x: 0, y: 18, w: 4, h: 6 },
+        { i: 'MapView', x: 0, y: 18, w: 4, h: 6 },
         { i: 'ComposedChart', x: 0, y: 12, w: 4, h: 6 },
     ],
 };
@@ -106,7 +106,7 @@ const initialBlocks = [
     { i: 'CountryDeaths' },
     { i: 'CountryFatalityRate' },
     { i: 'LineChart' },
-    { i: 'BarChart' },
+    { i: 'MapView' },
     { i: 'ComposedChart' },
 ];
 
@@ -472,7 +472,7 @@ class DashboardPage extends React.Component {
                         />
                     </Sticker>
                 );
-            case 'BarChart':
+            case 'MapView':
                 return (
                     <Sticker key={block.i}>
                         <OpenLayers
