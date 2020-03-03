@@ -10,8 +10,6 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 // Layout
 import Layout from './Layout';
 import FullScreenLayout from './FullScreenLayout';
-// Index
-const IntroPage = loadable(() => import('components/page/IntroPage'));
 // Statistics
 const DashboardPage = loadable(() => import('components/page/DashboardPage'));
 const RiskRankingPage = loadable(() => import('components/page/RiskRankingPage'))

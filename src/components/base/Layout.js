@@ -47,6 +47,8 @@ import CookieManager from 'network/CookieManager';
 
 import DrawerMenu from './DrawerMenu';
 
+import LogoIcon from 'components/ui/LogoIcon';
+
 import Const from '../../constants/Const';
 
 import DateUtil from '../../utils/DateUtil';
@@ -78,11 +80,6 @@ const styles = (theme) => ({
         // [theme.breakpoints.up('lg')]: {
         //     width: `calc(100% - ${Const.DRAWER_WIDTH}px)`,
         // },
-    },
-    appBarLogo: {
-        width: 48,
-        height: 48,
-        padding: theme.spacing(1),
     },
     appBarTitle: {
         fontSize: 16,
@@ -439,10 +436,13 @@ class Layout extends React.Component {
                             </Hidden>
 
                             <Hidden xsDown>
-                                <img
-                                    src="/static/image/favicon.png"
-                                    className={classes.appBarLogo}
-                                />
+                                <div style={{ padding: 8 }}>
+                                    <LogoIcon
+                                        width={32}
+                                        height={32}
+                                        fill={theme.colors.appBarContentText}
+                                    />
+                                </div>
                             </Hidden>
 
                             <Typography
@@ -466,7 +466,7 @@ class Layout extends React.Component {
                                     className={classes.appBarStickyBoard}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    href={"http://stickyboard.co.kr"}>
+                                    href={'http://stickyboard.co.kr'}>
                                     Powered by <b>StickyBoard</b>
                                 </a>
 

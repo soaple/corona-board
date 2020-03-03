@@ -69,7 +69,7 @@ const styles = theme => ({
         padding: 16,
     },
     attributionItem: {
-        fontSize: 12,
+        fontSize: 14,
         color: theme.colors.contentText,
         '&:hover': {
             cursor: 'pointer',
