@@ -29,7 +29,7 @@ const ThemeCorona = {
         // Content
         contentBackground: grey[50],
         // Drawer menu
-        drawerMenuCategoryText: grey[400],
+        drawerMenuCategoryText: grey[500],
         drawerMenuSelectedBackground: deepPurple[100],
         drawerMenuSelectedPin: deepPurple[500],
         // Speed dial

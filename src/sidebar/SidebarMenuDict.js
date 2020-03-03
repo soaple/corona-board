@@ -4,12 +4,12 @@ import React from 'react';
 
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-import Timeline from '@material-ui/icons/Timeline';
-import ViewList from '@material-ui/icons/ViewList';
-import AvTimer from '@material-ui/icons/AvTimer';
-import WbSunny from '@material-ui/icons/WbSunny';
-import Map from '@material-ui/icons/Map';
-import Layers from '@material-ui/icons/Layers';
+import Dashboard from '@material-ui/icons/Dashboard';
+import Error from '@material-ui/icons/Error';
+// import ViewList from '@material-ui/icons/ViewList';
+// import WbSunny from '@material-ui/icons/WbSunny';
+// import Map from '@material-ui/icons/Map';
+// import Layers from '@material-ui/icons/Layers';
 
 // https://material-ui.com/components/icons/#svgicon
 function StickyBoardIcon(props) {
@@ -29,9 +29,15 @@ const SidebarMenuDict = {
      ******************/
     STATISTICS: [{
         title: 'Dashboard',
-        icon: (<Timeline />),
+        icon: (<Dashboard />),
         url: '/statistics/dashboard',
         value: 101,
+        need_permission: false
+    }, {
+        title: 'Risk Ranking',
+        icon: (<Error />),
+        url: '/statistics/risk_ranking',
+        value: 102,
         need_permission: false
     }],
 
