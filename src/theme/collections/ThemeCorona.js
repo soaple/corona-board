@@ -28,6 +28,9 @@ const ThemeCorona = {
         colorDark: grey[800],
         // Content
         contentBackground: grey[50],
+        contentText: grey[800],
+        // AppBar
+        appBarContentText: '#ffffff',
         // Drawer menu
         drawerMenuCategoryText: grey[500],
         drawerMenuSelectedBackground: deepPurple[100],

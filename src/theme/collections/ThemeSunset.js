@@ -28,6 +28,9 @@ const ThemeSunset = {
         colorDark: grey[800],
         // Content
         contentBackground: grey[800],
+        contentText: grey[800],
+        // AppBar
+        appBarContentText: '#ffffff',
         // Drawer menu
         drawerMenuCategoryText: grey[600],
         drawerMenuSelectedBackground: red[200],

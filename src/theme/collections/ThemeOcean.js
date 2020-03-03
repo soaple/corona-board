@@ -28,6 +28,9 @@ const ThemeOcean = {
         colorDark: grey[800],
         // Content
         contentBackground: '#ffffff',
+        contentText: grey[800],
+        // AppBar
+        appBarContentText: '#ffffff',
         // Drawer menu
         drawerMenuCategoryText: grey[500],
         drawerMenuSelectedBackground: grey[300],

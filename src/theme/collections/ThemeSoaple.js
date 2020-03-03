@@ -28,6 +28,9 @@ const ThemeSoaple = {
         colorDark: grey[800],
         // Content
         contentBackground: '#ffffff',
+        contentText: '#ffffff',
+        // AppBar
+        appBarContentText: '#ffffff',
         // Drawer menu
         drawerMenuCategoryText: grey[200],
         drawerMenuSelectedBackground: grey[500],

@@ -23,6 +23,7 @@ import Const from '../../constants/Const';
 
 const styles = theme => ({
     drawerContainer: {
+        position: 'relative',
         height: '100%',
     },
     menuItemList: {
@@ -36,11 +37,17 @@ const styles = theme => ({
     },
     menuItem: {
         marginTop: 0,
+        '&:hover': {
+            color: theme.palette.primary.main,
+        },
     },
     menuItemSelected: {
         marginTop: 0,
         background: theme.colors.drawerMenuSelectedBackground,
         borderRight: '10px solid ' + theme.colors.drawerMenuSelectedPin,
+        '&:hover': {
+            color: theme.palette.primary.main,
+        },
     },
     menuItemIcon: {
         // color: theme.colors.colorDark,
@@ -54,6 +61,21 @@ const styles = theme => ({
         // color: theme.colors.colorDark,
         fontWeight: 700,
         fontSize: 14,
+    },
+    attributionContainer: {
+        position: 'absolute',
+        left: 0,
+        bottom: 0,
+        padding: 16,
+    },
+    attributionItem: {
+        fontSize: 12,
+        color: theme.colors.contentText,
+        '&:hover': {
+            cursor: 'pointer',
+            textDecoration: 'none',
+            color: theme.palette.primary.main,
+        },
     },
 });
 
@@ -156,6 +178,38 @@ class DrawerMenu extends React.Component {
                         </div>
                     )
                 })}
+
+                <div className={classes.attributionContainer}>
+                    <div>
+                        <a
+                            className={classes.attributionItem}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={"http://stickyboard.co.kr"}>
+                            Powered by <b>StickyBoard</b>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a
+                            className={classes.attributionItem}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={"https://ainize.ai"}>
+                            API deployed on <b>Ainize</b>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a
+                            className={classes.attributionItem}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={"https://github.com/CSSEGISandData/COVID-19"}>
+                            Data provided by <b>JHU CSSE</b>
+                        </a>
+                    </div>
+                </div>
             </div>
         )
     }

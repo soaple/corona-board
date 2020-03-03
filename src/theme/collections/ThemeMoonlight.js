@@ -28,6 +28,9 @@ const ThemeMoonlight = {
         colorDark: grey[800],
         // Content
         contentBackground: blueGrey[900],
+        contentText: '#ffffff',
+        // AppBar
+        appBarContentText: '#ffffff',
         // Drawer menu
         drawerMenuCategoryText: grey[400],
         drawerMenuSelectedBackground: blueGrey[600],

@@ -28,6 +28,9 @@ const ThemeLight = {
         colorDark: grey[800],
         // Content
         contentBackground: '#ffffff',
+        contentText: grey[800],
+        // AppBar
+        appBarContentText: grey[800],
         // Drawer menu
         drawerMenuCategoryText: grey[500],
         drawerMenuSelectedBackground: grey[300],

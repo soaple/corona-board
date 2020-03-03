@@ -97,11 +97,11 @@ const styles = (theme) => ({
     appBarStickyBoard: {
         fontSize: 16,
         paddingRight: 16,
-        color: theme.colors.colorLight,
+        color: theme.colors.appBarContentText,
         '&:hover': {
             cursor: 'pointer',
-            color: theme.colors.colorLight,
             textDecoration: 'none',
+            color: theme.colors.appBarContentText,
         },
     },
     menuIcon: {
