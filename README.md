@@ -1,5 +1,9 @@
 # CoronaBoard
-
+<p align="left">
+    <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/czE8ukZcb90">
+        <img width="480" height="auto" src="https://github.com/soaple/corona-board/blob/master/src/static/image/CoronaBoard_preview.png">
+    </a>
+</p>
 Global dashboard for monitoring Corona virus(COVID-19)
 
 ## Website
