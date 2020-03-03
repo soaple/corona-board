@@ -54,43 +54,64 @@ const initialLayout = {
         { i: 'ComposedChart', x: 6, y: 12, w: 6, h: 5 },
     ],
     md: [
-        { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
+        { i: 'TitleWorld', x: 0, y: 0, w: 12, h: 1 },
         { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
-        { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
-        { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
-        { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'HeatMap', x: 0, y: 6, w: 4, h: 6 },
-        { i: 'ComposedChart', x: 8, y: 0, w: 4, h: 6 },
+        { i: 'BriefRecovered', x: 3, y: 1, w: 3, h: 2 },
+        { i: 'BriefDeaths', x: 6, y: 1, w: 3, h: 2 },
+        { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
+        { i: 'SelectMenu', x: 0, y: 3, w: 12, h: 1 },
+        { i: 'CountryConfirmed', x: 0, y: 4, w: 3, h: 2 },
+        { i: 'CountryRecovered', x: 3, y: 4, w: 3, h: 2 },
+        { i: 'CountryDeaths', x: 6, y: 4, w: 3, h: 2 },
+        { i: 'CountryFatalityRate', x: 9, y: 4, w: 3, h: 2 },
+        { i: 'LineChart', x: 6, y: 6, w: 6, h: 6 },
+        { i: 'HeatMap', x: 0, y: 6, w: 6, h: 12 },
+        { i: 'ComposedChart', x: 6, y: 12, w: 6, h: 6 },
     ],
     sm: [
-        { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
-        { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
-        { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
-        { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
-        { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
-        { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'HeatMap', x: 0, y: 18, w: 4, h: 6 },
-        { i: 'ComposedChart', x: 4, y: 6, w: 4, h: 6 },
+        { i: 'TitleWorld', x: 0, y: 0, w: 8, h: 1 },
+        { i: 'BriefConfirmed', x: 0, y: 2, w: 4, h: 2 },
+        { i: 'BriefRecovered', x: 4, y: 2, w: 4, h: 2 },
+        { i: 'BriefDeaths', x: 0, y: 4, w: 4, h: 2 },
+        { i: 'BriefFatalityRate', x: 4, y: 4, w: 4, h: 2 },
+        { i: 'SelectMenu', x: 0, y: 6, w: 8, h: 1 },
+        { i: 'CountryConfirmed', x: 0, y: 7, w: 4, h: 2 },
+        { i: 'CountryRecovered', x: 4, y: 7, w: 4, h: 2 },
+        { i: 'CountryDeaths', x: 0, y: 9, w: 4, h: 2 },
+        { i: 'CountryFatalityRate', x: 4, y: 9, w: 4, h: 2 },
+        { i: 'LineChart', x: 0, y: 11, w: 4, h: 6 },
+        { i: 'HeatMap', x: 0, y: 17, w: 8, h: 6 },
+        { i: 'ComposedChart', x: 4, y: 11, w: 4, h: 6 },
     ],
     xs: [
-        { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
+        { i: 'TitleWorld', x: 0, y: 0, w: 6, h: 1 },
         { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
-        { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
-        { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
-        { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
-        { i: 'LineChart', x: 0, y: 0, w: 6, h: 6 },
-        { i: 'HeatMap', x: 0, y: 12, w: 6, h: 6 },
-        { i: 'ComposedChart', x: 0, y: 18, w: 6, h: 6 },
+        { i: 'BriefRecovered', x: 3, y: 1, w: 3, h: 2 },
+        { i: 'BriefDeaths', x: 0, y: 3, w: 3, h: 2 },
+        { i: 'BriefFatalityRate', x: 3, y: 3, w: 3, h: 2 },
+        { i: 'SelectMenu', x: 0, y: 5, w: 6, h: 1 },
+        { i: 'CountryConfirmed', x: 0, y: 6, w: 3, h: 2 },
+        { i: 'CountryRecovered', x: 3, y: 6, w: 3, h: 2 },
+        { i: 'CountryDeaths', x: 0, y: 8, w: 3, h: 2 },
+        { i: 'CountryFatalityRate', x: 3, y: 8, w: 3, h: 2 },
+        { i: 'LineChart', x: 0, y: 10, w: 6, h: 6 },
+        { i: 'HeatMap', x: 0, y: 22, w: 6, h: 6 },
+        { i: 'ComposedChart', x: 0, y: 16, w: 6, h: 6 },
     ],
     xxs: [
-        { i: 'SelectMenu', x: 0, y: 0, w: 12, h: 1 },
-        { i: 'BriefConfirmed', x: 0, y: 1, w: 3, h: 2 },
-        { i: 'BriefDeaths', x: 3, y: 1, w: 3, h: 2 },
-        { i: 'BriefRecovered', x: 6, y: 1, w: 3, h: 2 },
-        { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
-        { i: 'LineChart', x: 0, y: 0, w: 4, h: 6 },
-        { i: 'HeatMap', x: 0, y: 18, w: 4, h: 6 },
-        { i: 'ComposedChart', x: 0, y: 12, w: 4, h: 6 },
+        { i: 'TitleWorld', x: 0, y: 0, w: 4, h: 1 },
+        { i: 'BriefConfirmed', x: 0, y: 1, w: 4, h: 2 },
+        { i: 'BriefRecovered', x: 0, y: 3, w: 4, h: 2 },
+        { i: 'BriefDeaths', x: 0, y: 5, w: 4, h: 2 },
+        { i: 'BriefFatalityRate', x: 0, y: 7, w: 4, h: 2 },
+        { i: 'SelectMenu', x: 0, y: 9, w: 4, h: 1 },
+        { i: 'CountryConfirmed', x: 0, y: 10, w: 4, h: 2 },
+        { i: 'CountryRecovered', x: 0, y: 12, w: 4, h: 2 },
+        { i: 'CountryDeaths', x: 0, y: 14, w: 4, h: 2 },
+        { i: 'CountryFatalityRate', x: 0, y: 16, w: 4, h: 2 },
+        { i: 'LineChart', x: 0, y: 18, w: 4, h: 6 },
+        { i: 'HeatMap', x: 0, y: 30, w: 4, h: 6 },
+        { i: 'ComposedChart', x: 0, y: 24, w: 4, h: 6 },
     ],
 };
 
@@ -265,12 +286,17 @@ class DashboardPage extends React.Component {
 
         const selectedCountryLatest = countryLatestDict[selectedCountryName];
 
-        const pointList = Object.values(countryLatestDict).map((countryLatest) => {
-            return {
-                geometry: [ countryLatest.location.lng, countryLatest.location.lat ],
-                weight: countryLatest.confirmed,
+        const pointList = Object.values(countryLatestDict).map(
+            (countryLatest) => {
+                return {
+                    geometry: [
+                        countryLatest.location.lng,
+                        countryLatest.location.lat,
+                    ],
+                    weight: countryLatest.confirmed,
+                };
             }
-        })
+        );
 
         switch (block.i) {
             case 'TitleWorld':

@@ -438,10 +438,12 @@ class Layout extends React.Component {
                                 </IconButton>
                             </Hidden>
 
-                            <img
-                                src="/static/image/favicon.png"
-                                className={classes.appBarLogo}
-                            />
+                            <Hidden xsDown>
+                                <img
+                                    src="/static/image/favicon.png"
+                                    className={classes.appBarLogo}
+                                />
+                            </Hidden>
 
                             <Typography
                                 type="title"
@@ -459,17 +461,16 @@ class Layout extends React.Component {
                                     classes.appBarTitleMargin
                                 }></Typography>
 
-
-                            <a
-                                className={classes.appBarStickyBoard}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href={"http://stickyboard.co.kr"}>
-                                Powered by <b>StickyBoard</b>
-                            </a>
-
-                            {/* GitHub Star */}
                             <Hidden xsDown>
+                                <a
+                                    className={classes.appBarStickyBoard}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href={"http://stickyboard.co.kr"}>
+                                    Powered by <b>StickyBoard</b>
+                                </a>
+
+                                {/* GitHub Star */}
                                 <iframe
                                     src="https://ghbtns.com/github-btn.html?user=soaple&repo=stickyboard&type=star&count=true&size=large"
                                     frameBorder="0"
