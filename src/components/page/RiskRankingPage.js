@@ -121,14 +121,6 @@ class RiskRankingPage extends React.Component {
         const colors = theme.colors.colorArray;
 
         switch (block.i) {
-            case 'TitleRanking':
-                return (
-                    <Sticker key={block.i}>
-                        <div style={{ fontSize: 32, fontWeight: 'bold' }}>
-                            Risk Ranking
-                        </div>
-                    </Sticker>
-                );
             case 'RankingTable':
                 return (
                     <Sticker key={block.i}>

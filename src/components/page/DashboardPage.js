@@ -293,7 +293,7 @@ class DashboardPage extends React.Component {
                         countryLatest.location.lng,
                         countryLatest.location.lat,
                     ],
-                    weight: countryLatest.confirmed,
+                    weight: Math.min(countryLatest.confirmed / 20, 1.0),
                 };
             }
         );
@@ -512,8 +512,8 @@ class DashboardPage extends React.Component {
                             zoom={3}
                             minZoom={2}
                             maxZoom={17}
-                            blur={30}
-                            radius={20}
+                            blur={40}
+                            radius={30}
                             longitude={127.024792}
                             latitude={37.504296}
                             pointList={pointList}
