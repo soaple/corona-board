@@ -205,7 +205,7 @@ class DrawerMenu extends React.Component {
                             className={classes.attributionItem}
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={"https://ainize.ai"}>
+                            href={"https://ainize.ai/laeyoung/wuhan-coronavirus-api"}>
                             API deployed on <b>Ainize</b>
                         </a>
                     </div>
