@@ -11,5 +11,5 @@ Global dashboard for monitoring Corona virus(COVID-19)
 
 ## Attribution
 - Global Corona Dashboard powered by [StickyBoard](https://github.com/soaple/stickyboard/)
-- API deployed and operated by [Ainize](https://ainize.ai)
+- API deployed and operated by [Ainize](https://ainize.ai/laeyoung/wuhan-coronavirus-api)
 - Data provided by [JHU CSSE](https://github.com/CSSEGISandData/COVID-19)
