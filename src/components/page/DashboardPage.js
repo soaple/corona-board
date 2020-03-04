@@ -11,6 +11,9 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Typography from '@material-ui/core/Typography';
 import PersonIcon from '@material-ui/icons/Person';
+import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
+import AirlineSeatIcon from '@material-ui/icons/AirlineSeatFlat';
+import ReportIcon from '@material-ui/icons/Report';
 
 import { Sticker } from '@stickyboard/core';
 import {
@@ -311,7 +314,7 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<PersonIcon />}
+                            icon={<PersonIcon style={{ marginBottom: -4 }} />}
                             backgroundColor={theme.colors.colorArray[0]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -325,7 +328,7 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<PersonIcon />}
+                            icon={<LocalHospitalIcon style={{ marginBottom: -4 }} />}
                             backgroundColor={theme.colors.colorArray[2]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -339,7 +342,7 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<PersonIcon />}
+                            icon={<AirlineSeatIcon style={{ marginBottom: -4 }} />}
                             backgroundColor={theme.colors.colorArray[1]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -353,7 +356,7 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<PersonIcon />}
+                            icon={<ReportIcon style={{ marginBottom: -4 }} />}
                             backgroundColor={theme.colors.colorArray[4]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -407,7 +410,7 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<PersonIcon />}
+                            icon={<PersonIcon style={{ marginBottom: -4 }} />}
                             backgroundColor={theme.colors.colorArray[3]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -425,7 +428,7 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<PersonIcon />}
+                            icon={<LocalHospitalIcon style={{ marginBottom: -4 }} />}
                             backgroundColor={theme.colors.colorArray[5]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -443,7 +446,7 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<PersonIcon />}
+                            icon={<AirlineSeatIcon style={{ marginBottom: -4 }} />}
                             backgroundColor={theme.colors.colorArray[4]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -461,7 +464,7 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<PersonIcon />}
+                            icon={<ReportIcon style={{ marginBottom: -4 }} />}
                             backgroundColor={theme.colors.colorArray[10]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
