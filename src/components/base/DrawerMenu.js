@@ -185,6 +185,16 @@ class DrawerMenu extends React.Component {
                             className={classes.attributionItem}
                             target="_blank"
                             rel="noopener noreferrer"
+                            href={"https://github.com/soaple/corona-board"}>
+                            GitHub repository <b>CoronaBoard</b>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a
+                            className={classes.attributionItem}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             href={"http://stickyboard.co.kr"}>
                             Powered by <b>StickyBoard</b>
                         </a>
