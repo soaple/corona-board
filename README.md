@@ -9,6 +9,36 @@ Global dashboard for monitoring Corona virus(COVID-19)
 ## Website
 [![Run on Ainize](https://ainize.ai/static/images/run_on_ainize_button.svg)](https://corona-board.soaple.endpoint.ainize.ai/statistics/dashboard)
 
+## Build & Run
+### Prerequisite
+```bsh
+$ npm install -g nodemon
+$ npm install
+```
+### Development Mode
+
+#### Run on terminal
+```bsh
+$ npm run watch
+$ npm run dev
+```
+
+### Production Mode
+
+#### Run on terminal
+```bsh
+$ npm run build
+$ npm run production
+```
+
+#### Run as daemon using [PM2][pm2]
+[pm2]: https://github.com/Unitech/pm2
+
+```bsh
+$ npm run build
+$ npm start
+```
+
 ## Attribution
 - Global Corona Dashboard powered by [StickyBoard](https://github.com/soaple/stickyboard/)
 - API deployed and operated by [Ainize](https://ainize.ai/laeyoung/wuhan-coronavirus-api)
