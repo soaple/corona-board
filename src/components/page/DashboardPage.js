@@ -47,14 +47,14 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 3, y: 1, w: 3, h: 2 },
         { i: 'BriefDeaths', x: 6, y: 1, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
-        { i: 'SelectMenu', x: 0, y: 3, w: 12, h: 1 },
-        { i: 'CountryConfirmed', x: 0, y: 4, w: 3, h: 2 },
-        { i: 'CountryRecovered', x: 3, y: 4, w: 3, h: 2 },
-        { i: 'CountryDeaths', x: 6, y: 4, w: 3, h: 2 },
-        { i: 'CountryFatalityRate', x: 9, y: 4, w: 3, h: 2 },
-        { i: 'LineChart', x: 6, y: 6, w: 6, h: 6 },
-        { i: 'HeatMap', x: 0, y: 6, w: 6, h: 11 },
-        { i: 'ComposedChart', x: 6, y: 12, w: 6, h: 5 },
+        { i: 'SelectMenu', x: 0, y: 3, w: 12, h: 2 },
+        { i: 'CountryConfirmed', x: 0, y: 5, w: 3, h: 2 },
+        { i: 'CountryRecovered', x: 3, y: 5, w: 3, h: 2 },
+        { i: 'CountryDeaths', x: 6, y: 5, w: 3, h: 2 },
+        { i: 'CountryFatalityRate', x: 9, y: 5, w: 3, h: 2 },
+        { i: 'LineChart', x: 6, y: 7, w: 6, h: 6 },
+        { i: 'HeatMap', x: 0, y: 7, w: 6, h: 11 },
+        { i: 'ComposedChart', x: 6, y: 13, w: 6, h: 5 },
     ],
     md: [
         { i: 'TitleWorld', x: 0, y: 0, w: 12, h: 1 },
@@ -62,22 +62,22 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 3, y: 1, w: 3, h: 2 },
         { i: 'BriefDeaths', x: 6, y: 1, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 9, y: 1, w: 3, h: 2 },
-        { i: 'SelectMenu', x: 0, y: 3, w: 12, h: 1 },
-        { i: 'CountryConfirmed', x: 0, y: 4, w: 3, h: 2 },
-        { i: 'CountryRecovered', x: 3, y: 4, w: 3, h: 2 },
-        { i: 'CountryDeaths', x: 6, y: 4, w: 3, h: 2 },
-        { i: 'CountryFatalityRate', x: 9, y: 4, w: 3, h: 2 },
-        { i: 'LineChart', x: 6, y: 6, w: 6, h: 6 },
-        { i: 'HeatMap', x: 0, y: 6, w: 6, h: 12 },
+        { i: 'SelectMenu', x: 0, y: 3, w: 12, h: 2 },
+        { i: 'CountryConfirmed', x: 0, y: 5, w: 3, h: 2 },
+        { i: 'CountryRecovered', x: 3, y: 5, w: 3, h: 2 },
+        { i: 'CountryDeaths', x: 6, y: 5, w: 3, h: 2 },
+        { i: 'CountryFatalityRate', x: 9, y: 5, w: 3, h: 2 },
+        { i: 'LineChart', x: 6, y: 7, w: 6, h: 5 },
+        { i: 'HeatMap', x: 0, y: 7, w: 6, h: 11 },
         { i: 'ComposedChart', x: 6, y: 12, w: 6, h: 6 },
     ],
     sm: [
         { i: 'TitleWorld', x: 0, y: 0, w: 8, h: 1 },
-        { i: 'BriefConfirmed', x: 0, y: 2, w: 4, h: 2 },
-        { i: 'BriefRecovered', x: 4, y: 2, w: 4, h: 2 },
-        { i: 'BriefDeaths', x: 0, y: 4, w: 4, h: 2 },
-        { i: 'BriefFatalityRate', x: 4, y: 4, w: 4, h: 2 },
-        { i: 'SelectMenu', x: 0, y: 6, w: 8, h: 1 },
+        { i: 'BriefConfirmed', x: 0, y: 1, w: 4, h: 2 },
+        { i: 'BriefRecovered', x: 4, y: 1, w: 4, h: 2 },
+        { i: 'BriefDeaths', x: 0, y: 3, w: 4, h: 2 },
+        { i: 'BriefFatalityRate', x: 4, y: 3, w: 4, h: 2 },
+        { i: 'SelectMenu', x: 0, y: 5, w: 8, h: 2 },
         { i: 'CountryConfirmed', x: 0, y: 7, w: 4, h: 2 },
         { i: 'CountryRecovered', x: 4, y: 7, w: 4, h: 2 },
         { i: 'CountryDeaths', x: 0, y: 9, w: 4, h: 2 },
@@ -92,14 +92,14 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 3, y: 1, w: 3, h: 2 },
         { i: 'BriefDeaths', x: 0, y: 3, w: 3, h: 2 },
         { i: 'BriefFatalityRate', x: 3, y: 3, w: 3, h: 2 },
-        { i: 'SelectMenu', x: 0, y: 5, w: 6, h: 1 },
-        { i: 'CountryConfirmed', x: 0, y: 6, w: 3, h: 2 },
-        { i: 'CountryRecovered', x: 3, y: 6, w: 3, h: 2 },
-        { i: 'CountryDeaths', x: 0, y: 8, w: 3, h: 2 },
-        { i: 'CountryFatalityRate', x: 3, y: 8, w: 3, h: 2 },
-        { i: 'LineChart', x: 0, y: 10, w: 6, h: 6 },
-        { i: 'HeatMap', x: 0, y: 22, w: 6, h: 6 },
-        { i: 'ComposedChart', x: 0, y: 16, w: 6, h: 6 },
+        { i: 'SelectMenu', x: 0, y: 5, w: 6, h: 2 },
+        { i: 'CountryConfirmed', x: 0, y: 7, w: 3, h: 2 },
+        { i: 'CountryRecovered', x: 3, y: 7, w: 3, h: 2 },
+        { i: 'CountryDeaths', x: 0, y: 9, w: 3, h: 2 },
+        { i: 'CountryFatalityRate', x: 3, y: 9, w: 3, h: 2 },
+        { i: 'LineChart', x: 0, y: 11, w: 6, h: 6 },
+        { i: 'HeatMap', x: 0, y: 23, w: 6, h: 6 },
+        { i: 'ComposedChart', x: 0, y: 17, w: 6, h: 6 },
     ],
     xxs: [
         { i: 'TitleWorld', x: 0, y: 0, w: 4, h: 1 },
@@ -107,14 +107,14 @@ const initialLayout = {
         { i: 'BriefRecovered', x: 0, y: 4, w: 4, h: 3 },
         { i: 'BriefDeaths', x: 0, y: 7, w: 4, h: 3 },
         { i: 'BriefFatalityRate', x: 0, y: 10, w: 4, h: 3 },
-        { i: 'SelectMenu', x: 0, y: 13, w: 4, h: 1 },
-        { i: 'CountryConfirmed', x: 0, y: 14, w: 4, h: 3 },
-        { i: 'CountryRecovered', x: 0, y: 17, w: 4, h: 3 },
-        { i: 'CountryDeaths', x: 0, y: 20, w: 4, h: 3 },
-        { i: 'CountryFatalityRate', x: 0, y: 23, w: 4, h: 3 },
-        { i: 'LineChart', x: 0, y: 26, w: 4, h: 6 },
-        { i: 'HeatMap', x: 0, y: 38, w: 4, h: 6 },
-        { i: 'ComposedChart', x: 0, y: 32, w: 4, h: 6 },
+        { i: 'SelectMenu', x: 0, y: 13, w: 4, h: 2 },
+        { i: 'CountryConfirmed', x: 0, y: 15, w: 4, h: 3 },
+        { i: 'CountryRecovered', x: 0, y: 18, w: 4, h: 3 },
+        { i: 'CountryDeaths', x: 0, y: 21, w: 4, h: 3 },
+        { i: 'CountryFatalityRate', x: 0, y: 24, w: 4, h: 3 },
+        { i: 'LineChart', x: 0, y: 27, w: 4, h: 6 },
+        { i: 'HeatMap', x: 0, y: 39, w: 4, h: 6 },
+        { i: 'ComposedChart', x: 0, y: 33, w: 4, h: 6 },
     ],
 };
 
@@ -328,7 +328,11 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<LocalHospitalIcon style={{ marginBottom: -4 }} />}
+                            icon={
+                                <LocalHospitalIcon
+                                    style={{ marginBottom: -4 }}
+                                />
+                            }
                             backgroundColor={theme.colors.colorArray[2]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -342,7 +346,9 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<AirlineSeatIcon style={{ marginBottom: -4 }} />}
+                            icon={
+                                <AirlineSeatIcon style={{ marginBottom: -4 }} />
+                            }
                             backgroundColor={theme.colors.colorArray[1]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -376,7 +382,13 @@ class DashboardPage extends React.Component {
             case 'SelectMenu':
                 return (
                     <Sticker key={block.i}>
-                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        <div
+                            style={{
+                                height: '100%',
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'flex-end',
+                            }}>
                             <div style={{ fontSize: 32, fontWeight: 'bold' }}>
                                 Regional
                             </div>
@@ -428,7 +440,11 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<LocalHospitalIcon style={{ marginBottom: -4 }} />}
+                            icon={
+                                <LocalHospitalIcon
+                                    style={{ marginBottom: -4 }}
+                                />
+                            }
                             backgroundColor={theme.colors.colorArray[5]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
@@ -446,7 +462,9 @@ class DashboardPage extends React.Component {
                 return (
                     <Sticker key={block.i}>
                         <NumberWidget
-                            icon={<AirlineSeatIcon style={{ marginBottom: -4 }} />}
+                            icon={
+                                <AirlineSeatIcon style={{ marginBottom: -4 }} />
+                            }
                             backgroundColor={theme.colors.colorArray[4]}
                             defaultColor={theme.colors.colorLight}
                             valueColor={theme.colors.colorLight}
