@@ -34,7 +34,11 @@ import { HeatMap } from '@stickyboard/openlayers';
 import ApiManager from 'network/ApiManager';
 import StatusCode from 'network/StatusCode';
 
+import LocalStorageManager from 'manager/LocalStorageManager';
+
 import PageBaseContainer from 'redux/containers/PageBaseContainer';
+
+import LocalStorageConst from 'constants/LocalStorageConst';
 
 const styles = (theme) => ({
     root: {},
@@ -138,8 +142,13 @@ class DashboardPage extends React.Component {
     constructor(props) {
         super(props);
 
+        const initialCountryName = LocalStorageManager.getItem(
+            LocalStorageConst.KEY.SELECTED_COUNTRY,
+            'South Korea');
+
         this.state = {
-            selectedCountryName: '',
+            // Set initially selected country
+            selectedCountryName: initialCountryName,
             // Data
             brief: null,
             countryLatestDict: {},
@@ -156,6 +165,10 @@ class DashboardPage extends React.Component {
     onSelectCountry = (event) => {
         this.setState({
             selectedCountryName: event.target.value,
+        }, () => {
+            LocalStorageManager.setItem(
+                LocalStorageConst.KEY.SELECTED_COUNTRY,
+                this.state.selectedCountryName);
         });
     };
 
