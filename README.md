@@ -39,6 +39,18 @@ $ npm run build
 $ npm start
 ```
 
+### Dockerize
+
+#### Build docker image
+```bsh
+$ docker build -t <dockerhub_username>/<dockerhub_repo_name>:latest .
+```
+
+#### Push docker image to DockerHub
+```bsh
+$ docker push <dockerhub_username>/<dockerhub_repo_name>:latest
+```
+
 ## Attribution
 - Global Corona Dashboard powered by [StickyBoard](https://github.com/soaple/stickyboard/)
 - API deployed and operated by [Ainize](https://ainize.ai/laeyoung/wuhan-coronavirus-api)
