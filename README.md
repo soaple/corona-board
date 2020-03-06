@@ -42,8 +42,14 @@ $ npm start
 ### Dockerize
 
 #### Build docker image
+<strong><em>* You must build .js bundles($ npm run build) before build a docker image</em></strong>
 ```bsh
 $ docker build -t <dockerhub_username>/<dockerhub_repo_name>:latest .
+```
+
+#### Run
+```bsh
+$ docker run -p 3000:3000 <dockerhub_username>/<dockerhub_repo_name>:latest
 ```
 
 #### Push docker image to DockerHub
