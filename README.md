@@ -42,9 +42,9 @@ $ npm start
 ### Dockerize
 
 #### Build docker image
-<strong><em>* You must build .js bundles($ npm run build) before build a docker image</em></strong>
+Enable [Docker Buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/#to-enable-buildkit-builds) to speed up build
 ```bsh
-$ docker build -t <dockerhub_username>/<dockerhub_repo_name>:latest .
+$ DOCKER_BUILDKIT=1 docker build -t <dockerhub_username>/<dockerhub_repo_name>:latest .
 ```
 
 #### Run
