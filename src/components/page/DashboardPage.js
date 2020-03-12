@@ -144,7 +144,7 @@ class DashboardPage extends React.Component {
 
         const initialCountryName = LocalStorageManager.getItem(
             LocalStorageConst.KEY.SELECTED_COUNTRY,
-            'South Korea');
+            'Korea, South');
 
         this.state = {
             // Set initially selected country

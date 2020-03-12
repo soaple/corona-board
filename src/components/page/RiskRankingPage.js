@@ -24,26 +24,14 @@ const styles = (theme) => ({
 });
 
 const initialLayout = {
-    lg: [
-        { i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 },
-    ],
-    md: [
-        { i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 },
-    ],
-    sm: [
-        { i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 },
-    ],
-    xs: [
-        { i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 },
-    ],
-    xxs: [
-        { i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 },
-    ],
+    lg: [{ i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 }],
+    md: [{ i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 }],
+    sm: [{ i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 }],
+    xs: [{ i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 }],
+    xxs: [{ i: 'RankingTable', x: 0, y: 0, w: 12, h: 15 }],
 };
 
-const initialBlocks = [
-    { i: 'RankingTable' },
-];
+const initialBlocks = [{ i: 'RankingTable' }];
 
 class RiskRankingPage extends React.Component {
     constructor(props) {
@@ -67,13 +55,23 @@ class RiskRankingPage extends React.Component {
                 // Sort latest by # of confirmed, deaths, recovered
                 response.sort((a, b) => {
                     if (a.confirmed !== b.confirmed) {
-                        return a.confirmed > b.confirmed ? -1 : 1;
+                        return (a.confirmed ? a.confirmed : 0) >
+                            (b.confirmed ? b.confirmed : 0)
+                            ? -1
+                            : 1;
                     } else if (a.deaths !== b.deaths) {
-                        return a.deaths > b.deaths ? -1 : 1;
+                        return (a.deaths ? a.deaths : 0) >
+                            (b.deaths ? b.deaths : 0)
+                            ? -1
+                            : 1;
                     } else {
-                        return a.recovered < b.recovered ? -1 : 1;
+                        return (a.recovered ? a.recovered : 0) <
+                            (b.recovered ? b.recovered : 0)
+                            ? -1
+                            : 1;
                     }
                 });
+                console.log(response);
 
                 response.forEach((data, index) => {
                     const {
@@ -113,9 +111,7 @@ class RiskRankingPage extends React.Component {
     };
 
     generateBlock = (block, data) => {
-        const {
-            sortedLatestList,
-        } = data;
+        const { sortedLatestList } = data;
         const { theme } = this.props;
 
         const colors = theme.colors.colorArray;
@@ -127,7 +123,8 @@ class RiskRankingPage extends React.Component {
                         <TableWithPagination
                             title={'Risk Ranking (Sorted by # of confirmed)'}
                             data={sortedLatestList}
-                            rowsPerPage={10} />
+                            rowsPerPage={10}
+                        />
                     </Sticker>
                 );
         }
