@@ -407,7 +407,7 @@ class DashboardPage extends React.Component {
                             </div>
 
                             <FormControl
-                                style={{ minWidth: 200, marginLeft: 32 }}>
+                                style={{ minWidth: 180, marginLeft: 16 }}>
                                 <InputLabel>Country & Region</InputLabel>
                                 <Select
                                     value={selectedCountryName}
