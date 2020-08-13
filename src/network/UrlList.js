@@ -1,6 +1,7 @@
 // src/network/UrlList.js
 
-const BASE_URL = 'https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/';
+// const BASE_URL = 'https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/';
+const BASE_URL = 'https://master-covid-19-api-laeyoung.endpoint.ainize.ai/';
 const API_BASE_URL = BASE_URL + 'jhu-edu';
 
 var UrlList = {
