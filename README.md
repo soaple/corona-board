@@ -7,7 +7,8 @@
 Global dashboard for monitoring Corona virus(COVID-19)
 
 ## Website
-[![Run on Ainize](https://ainize.ai/static/images/run_on_ainize_button.svg)](https://corona-board.soaple.endpoint.ainize.ai/)
+[![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://master-corona-board-soaple.endpoint.ainize.ai/)
+
 
 ## Build & Run
 ### Prerequisite
