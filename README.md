@@ -1,7 +1,7 @@
 # CoronaBoard
 <p align="left">
     <a target="_blank" rel="noopener noreferrer" href="https://corona-board.soaple.endpoint.ainize.ai/">
-        <img width="480" height="auto" src="https://github.com/soaple/corona-board/blob/master/src/static/image/CoronaBoard_preview.png">
+        <img width="480" height="auto" src="https://raw.githubusercontent.com/soaple/corona-board/master/src/static/image/CoronaBoard_preview.png">
     </a>
 </p>
 Global dashboard for monitoring Corona virus(COVID-19)
