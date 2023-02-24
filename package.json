@@ -64,7 +64,7 @@
         "react-transition-group": "^1.2.1",
         "redux": "^3.7.2",
         "request": "^2.88.0",
-        "sequelize": "^5.19.1",
+        "sequelize": "^6.29.0",
         "sha256": "^0.2.0",
         "styled-components": "^4.3.2",
         "tls": "0.0.1",
